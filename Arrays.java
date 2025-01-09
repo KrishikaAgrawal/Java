@@ -102,6 +102,11 @@ public class Arrays {
         System.out.println(max);
     }
 
+    // print max Subarray sum prefix sum method
+    public static void prefixSum(int []b) {
+        
+    }
+
     public static void main(String args[]) {
         int a[] = { 2, 8, 4, 2, 1 };
         linearSearch(a, 8);
@@ -113,5 +118,6 @@ public class Arrays {
         subarrays(a);
         int b[] = { 2,4,6,8,10 };
         maxSumSubarray(b);
+        prefixSum(b);
     }
 }
