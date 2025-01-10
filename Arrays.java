@@ -89,11 +89,12 @@ public class Arrays {
         int n = a.length;
         int max = Integer.MIN_VALUE;
         for (int i = 0; i < n; i++) {
-            for (int j = i + 1; j < n; j++) {
+            for (int j = i ; j < n; j++) {
                 int sum = 0;
                 for (int k = i; k <= j; k++) {
                     sum += a[k];
                 }
+                // System.out.println(sum);
                 if (max < sum)
                     max = sum;
             }
@@ -104,7 +105,22 @@ public class Arrays {
 
     // print max Subarray sum prefix sum method
     public static void prefixSum(int []b) {
-        
+        int a[] = new int[b.length];
+        a[0] = b[0];
+        for (int i = 1; i < b.length; i++) {
+            a[i] = a[i - 1] + b[i];
+        }
+        int sum = b[0];
+        int max = b[0];
+        for (int i = 0; i < b.length; i++) {
+            for (int j = i ; j < b.length; j++) {
+                sum = i==0 ? a[j] : a[j] - a[i - 1];
+                if (max < sum) {
+                    max = sum;
+            }
+            }
+        }
+        System.out.println(max);
     }
 
     public static void main(String args[]) {
